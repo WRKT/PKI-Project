@@ -1,0 +1,10 @@
+---
+version: '3'
+services:
+  rootca:
+    build: .
+    volumes:
+      - "data:/opt/rootca"
+    hostname: rootca.wrkt.com 
+volumes:
+  data:
