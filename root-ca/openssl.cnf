@@ -1,0 +1,32 @@
+[ ca ]
+default_ca = CA_default
+
+[ CA_default ]
+dir = /etc/ssl/ca
+database = $dir/index.txt
+new_certs_dir = $dir/newcerts
+certificate = $dir/certs/ca.crt
+serial = $dir/serial
+private_key = $dir/private/ca.key
+RANDFILE = $dir/private/.rand
+
+[ req ]
+default_bits = 2048
+default_keyfile = /etc/ssl/ca/private/ca.key
+default_md = sha256
+distinguished_name = req_distinguished_name
+x509_extensions = v3_ca
+
+[ req_distinguished_name ]
+countryName = FR
+stateOrProvinceName = France
+localityName = Strasbourg
+organizationName = WRKT Co.
+commonName = regis.wrkt.com
+
+[ v3_ca ]
+basicConstraints = CA:TRUE
+keyUsage = digitalSignature, keyCertSign, cRLSign
+subjectKeyIdentifier = hash
+authorityKeyIdentifier = keyid:always,issuer
+

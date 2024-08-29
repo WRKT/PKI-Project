@@ -5,10 +5,9 @@ LABEL maintainer="winness.rakotozafy@outlook.fr"
 
 RUN apk update && apk add openssl
 
-RUN mkdir -p /opt/rootca/; mkdir /opt/rootca/local/; mkdir /opt/rootca/output/; mkdir /opt/rootca/input/
+COPY openssl.cnf /etc/ssl/ca/openssl.cnf
+COPY scripts/generate_ca.sh /usr/local/bin/generate_ca.sh
 
-WORKDIR /opt/rootca
+RUN chmod +x /usr/local/bin/generate_ca.sh
 
-RUN openssl genrsa -aes256 -out /opt/rootca/local/rootCA.key 4096
-
-CMD ["sleep", "infinity"]
+CMD ["generate_ca.sh"]

@@ -1,0 +1,12 @@
+[ req ]
+default_bits = 2048
+default_keyfile = /etc/ssl/signer/private/signer.key 
+default_md = sha256
+distinguished_name = req_distinguished_name
+
+[ req_distinguished_name ]
+countryName = FR
+stateOrProvinceName = Strasbourg
+localityName = Strasbourg
+organizationName = WRKT Co.
+commonName = regis.wrkt.com 
