@@ -1,0 +1,22 @@
+---
+version: '3.8'
+services:
+  ca:
+    build: ./root-ca
+    container_name: ca
+    volumes:
+      - /home/wrkt/Projects/pki-project/root-ca/ca_data:/etc/ssl/ca
+    command: generate_ca.sh
+ 
+  signer:
+    build: ./signer
+    container_name: signer
+    depends_on:
+      - ca
+    volumes:
+      - /home/wrkt/Projects/pki-project/signer/signer_data:/etc/ssl/signer
+      - /home/wrkt/Projects/pki-project/root-ca/ca_data:/etc/ssl/ca:ro
+    command: generate_cert.sh
+volumes:
+  ca_data:
+  signer_data:

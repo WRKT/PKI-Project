@@ -1,9 +1,0 @@
----
-services:
-  rootca:
-    build: .
-    volumes:
-      - "/home/wrkt/Projects/pki-project/root-ca/data:/opt/rootca"
-    hostname: rootca.wrkt.com 
-volumes:
-  data:

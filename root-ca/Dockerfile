@@ -9,4 +9,6 @@ RUN mkdir -p /opt/rootca/; mkdir /opt/rootca/local/; mkdir /opt/rootca/output/; 
 
 WORKDIR /opt/rootca
 
+RUN openssl genrsa -aes256 -out /opt/rootca/local/rootCA.key 4096
+
 CMD ["sleep", "infinity"]
