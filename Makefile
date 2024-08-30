@@ -13,5 +13,5 @@ up:
 clean:
 	docker-compose down
 	docker-compose rm -f 
-	rm -rf /home/wrkt/Projects/pki-project/root-ca/ca_data
-	rm -rf /home/wrkt/Projects/pki-project/signer/signer_data
+	sudo rm -rf /home/wrkt/Projects/pki-project/root-ca/ca_data
+	sudo rm -rf /home/wrkt/Projects/pki-project/signer/signer_data
