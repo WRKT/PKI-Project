@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 set -e 
 
@@ -10,4 +10,4 @@ touch /etc/ssl/ca/index.txt
 
 echo 1000 > /etc/ssl/ca/serial
 
-openssl req -x509 -config /etc/ssl/ca/openssl.cnf -newkey rsa:2048 -days 3650 -out /etc/ssl/ca/certs/ca.crt -outform PEM -subj "/CN=regis.wrkt.com" -nodes
+openssl req -x509 -config /etc/ssl/ca/openssl.cnf -newkey rsa:2048 -days 3650 -out /etc/ssl/ca/certs/ca.crt -outform PEM -subj "/CN=ca.wrkt.com" -nodes

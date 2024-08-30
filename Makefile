@@ -1,11 +1,11 @@
-FQDN ?= regis.wrkt.com
+FQDN ?= example.local
 
-.PHONY: all build up clea,
+.PHONY: all build up clean
 
 all: build up
 
 build:
-	docker-compose build
+	docker-compose build --no-cache
 
 up:
 	FQDN=$(FQDN) docker-compose up
