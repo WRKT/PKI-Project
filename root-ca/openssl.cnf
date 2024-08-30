@@ -22,7 +22,7 @@ countryName = FR
 stateOrProvinceName = France
 localityName = Strasbourg
 organizationName = WRKT Co.
-commonName = regis.wrkt.com
+commonName = ca.wrkt.com
 
 [ v3_ca ]
 basicConstraints = CA:TRUE
