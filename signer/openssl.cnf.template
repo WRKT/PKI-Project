@@ -3,6 +3,7 @@ default_bits = 2048
 default_keyfile = /etc/ssl/signer/private/__FQDN__.key 
 default_md = sha256
 distinguished_name = req_distinguished_name
+prompt = no
 
 [ req_distinguished_name ]
 countryName = FR
