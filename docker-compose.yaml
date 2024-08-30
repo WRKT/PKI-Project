@@ -15,7 +15,7 @@ services:
       - ca
     volumes:
       - ./signer/signer_data:/etc/ssl/signer
-      - ./root-ca/ca_data:/etc/ssl/ca:ro
+      - ./root-ca/ca_data:/etc/ssl/ca
     environment:
       - FQDN
     command: generate_cert.sh
