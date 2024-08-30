@@ -5,7 +5,7 @@ services:
     build: ./root-ca
     container_name: ca
     volumes:
-      - /home/wrkt/Projects/pki-project/root-ca/ca_data:/etc/ssl/ca
+      - ./root-ca/ca_data/:/etc/ssl/ca
     command: generate_ca.sh
  
   signer:
@@ -14,8 +14,8 @@ services:
     depends_on:
       - ca
     volumes:
-      - /home/wrkt/Projects/pki-project/signer/signer_data:/etc/ssl/signer
-      - /home/wrkt/Projects/pki-project/root-ca/ca_data:/etc/ssl/ca:ro
+      - ./signer/signer_data:/etc/ssl/signer
+      - ./root-ca/ca_data:/etc/ssl/ca:ro
     environment:
       - FQDN=${FQDN}
     command: generate_cert.sh

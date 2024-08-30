@@ -1,8 +1,10 @@
-FROM alpine:3.20.2
+# Containerized signer
+FROM ubuntu:24.04
 
-RUN apk add --no-cache openssl
+RUN apt update && apt -y install openssl
+RUN apt clean
 
-COPY openssl.cnf /etc/ssl/signer/openssl.cnf
+COPY ./openssl.cnf /etc/ssl/signer/openssl.cnf
 COPY scripts/generate_cert.sh /usr/local/bin/generate_cert.sh
 
 RUN chmod +x /usr/local/bin/generate_cert.sh
